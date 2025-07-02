@@ -53,7 +53,7 @@ const Home = () => {
       
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white py-20">
-        <div className="container">
+        <div className="max-w-7xl mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl font-bold mb-6">
               Sports AI Lab
@@ -90,7 +90,7 @@ const Home = () => {
 
       {/* Categories Preview */}
       <section className="py-12 bg-gray-50">
-        <div className="container">
+        <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
             カテゴリ別記事
           </h2>

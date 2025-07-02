@@ -1,0 +1,5 @@
+# Redirect all routes to index.html for SPA routing
+/*    /index.html   200
+
+# Redirect old URLs (if needed in the future)
+# /old-path  /new-path  301

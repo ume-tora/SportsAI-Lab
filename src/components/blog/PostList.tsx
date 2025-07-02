@@ -19,12 +19,12 @@ const PostList = ({ posts, title, featured = false }: PostListProps) => {
   return (
     <section className="py-12">
       {title && (
-        <div className="container mb-8">
+        <div className="max-w-7xl mx-auto px-4 mb-8">
           <h2 className="text-3xl font-bold text-gray-900">{title}</h2>
         </div>
       )}
       
-      <div className="container">
+      <div className="max-w-7xl mx-auto px-4">
         {featured && posts.length > 0 && (
           <div className="mb-12">
             <PostCard post={posts[0]} featured={true} />

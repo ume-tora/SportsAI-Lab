@@ -3,8 +3,6 @@ name: Deploy to Cloudflare Pages
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
 
 jobs:
   build-and-deploy:
@@ -17,7 +15,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
           cache: 'npm'
           
       - name: Install dependencies
@@ -31,8 +29,10 @@ jobs:
           VITE_SANITY_API_VERSION: ${{ secrets.VITE_SANITY_API_VERSION }}
           
       - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
+        uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=sports-ai-blog --compatibility-date=2024-01-01
+          projectName: sports-ai-blog
+          directory: dist
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
