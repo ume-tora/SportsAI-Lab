@@ -19,8 +19,9 @@ const Home = () => {
           getPosts(),
           getFeaturedPosts(),
         ])
-        setPosts(allPosts.slice(0, 9)) // 最新9件を表示
-        setFeaturedPosts(featured)
+        // null/undefined 対応
+        setPosts(allPosts ? allPosts.slice(0, 9) : [])
+        setFeaturedPosts(featured || [])
       } catch (err) {
         setError('記事の取得に失敗しました')
         console.error('Error fetching posts:', err)

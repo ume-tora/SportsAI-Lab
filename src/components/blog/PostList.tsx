@@ -2,13 +2,14 @@ import PostCard from './PostCard'
 import type { Post } from '../../lib/sanity.types'
 
 interface PostListProps {
-  posts: Post[]
+  posts: Post[] | null | undefined
   title?: string
   featured?: boolean
 }
 
 const PostList = ({ posts, title, featured = false }: PostListProps) => {
-  if (posts.length === 0) {
+  // Null/undefined チェックを追加
+  if (!posts || posts.length === 0) {
     return (
       <div className="text-center py-12">
         <p className="text-gray-500 text-lg">記事が見つかりませんでした。</p>

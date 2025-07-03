@@ -34,7 +34,7 @@ const Category = () => {
       try {
         setLoading(true)
         const postsData = await getPostsByCategory(slug)
-        setPosts(postsData)
+        setPosts(postsData || [])
       } catch (err) {
         setError('記事の取得に失敗しました')
         console.error('Error fetching posts:', err)
